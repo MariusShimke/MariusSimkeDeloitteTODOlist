@@ -62,38 +62,37 @@
         <div id="monSlide" class="item active">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.MondayList)
             {
-
                 <form asp-action="UpdateTask" class="formInlineTable ">
                     <div class="rTableRow">
                         <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
+                        <div class="rTableCell col-xs-1">
                             <div class="custom-control custom-checkbox checkbox-xl">
                                 <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
                                 <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                             </div>
                         </div>
-                        <div class="rTableCell">
+                        <div class="rTableCell col-xs-1">
                             <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
                         </div>
-                        <div class="rTableCell">
+                        <div class="rTableCell col-xs-3">
                             <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
                         </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
+                        <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                        <div class="rTableCell col-xs-2">
                             <button type="submit" class="btn btn-xs btn-info">Update</button>
                             | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
                         </div>
-                        <div class="rTableCell"></div>
+                        <div class="rTableCell col-xs-2"></div>
 
                     </div>
                 </form>
@@ -104,41 +103,41 @@
         <div id="tueSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.TuesdayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>
@@ -146,41 +145,41 @@
         <div id="wedSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.WednesdayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>
@@ -188,41 +187,41 @@
         <div id="thuSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.ThursdayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>
@@ -230,41 +229,41 @@
         <div id="friSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.FridayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>
@@ -272,41 +271,41 @@
         <div id="satSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.SaturdayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>
@@ -314,41 +313,41 @@
         <div id="sunSlide" class="item">
             <div class="rTable">
                 <div class="rTableRow">
-                    <div class="rTableHead"><strong>Done</strong></div>
-                    <div class="rTableHead"><strong>Priority</strong></div>
-                    <div class="rTableHead"><strong>Description</strong></div>
-                    <div class="rTableHead"><strong>Last Updated</strong></div>
-                    <div class="rTableHead"><strong>Controls</strong></div>
-                    <div class="rTableHead"><strong>Select Day</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Done</strong></div>
+                    <div class="rTableHead col-xs-1"><strong>Priority</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Description</strong></div>
+                    <div class="rTableHead col-xs-3"><strong>Last Updated</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Controls</strong></div>
+                    <div class="rTableHead col-xs-2"><strong>Select Day</strong></div>
                 </div>
             </div>
             @foreach (var task in ViewBag.SundayList)
             {
 
-                <form asp-action="UpdateTask" class="formInlineTable ">
-                    <div class="rTableRow">
-                        <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
-                        <div class="rTableCell">
-                            <div class="custom-control custom-checkbox checkbox-xl">
-                                <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
-                                <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
-                            </div>
+            <form asp-action="UpdateTask" class="formInlineTable ">
+                <div class="rTableRow">
+                    <div class="hidden"><input type="text" id="taskIDinline" name="taskIDinline" value="@task.TaskID"></div>
+                    <div class="rTableCell col-xs-1">
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="isDoneInline" name="isDoneInline" checked="@task.IsDone" onclick="changeBoxValue(this);">
+                            <input class="hidden isDoneNumValue" type="number" id="isDoneNumValue" name="isDoneNumValue" />
                         </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
-                        </div>
-                        <div class="rTableCell">
-                            <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
-                        </div>
-                        <div class="rTableCell">@task.DtUpdated</div>
-                        <div class="rTableCell">
-                            <button type="submit" class="btn btn-xs btn-info">Update</button>
-                            | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
-                        </div>
-                        <div class="rTableCell"></div>
-
                     </div>
-                </form>
+                    <div class="rTableCell col-xs-1">
+                        <input class="inTableTextInput priorTxtIn" type="number" id="priorityInline" name="priorityInline" min="1" max="10" step="1" value="@task.Priority">
+                    </div>
+                    <div class="rTableCell col-xs-3">
+                        <input class="inTableTextInput" type="text" name="descriptionInline" id="descriptionInline" value="@task.Description">
+                    </div>
+                    <div class="rTableCell col-xs-3">@task.DtUpdated</div>
+                    <div class="rTableCell col-xs-2">
+                        <button type="submit" class="btn btn-xs btn-info">Update</button>
+                        | <a asp-action="DELETE" asp-route-id="@task.TaskID" class="btn btn-xs btn-danger">Delete</a>
+                    </div>
+                    <div class="rTableCell col-xs-2"></div>
+
+                </div>
+            </form>
             }
 
             <div class="carousel-caption" role="option"></div>

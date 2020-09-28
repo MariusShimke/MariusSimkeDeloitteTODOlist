@@ -4,6 +4,7 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
+    document.getElementById("createDescription").value = "";
 
     function getDayName(dateStr, locale) {
         var date = new Date(dateStr);
@@ -78,6 +79,10 @@ function changeBoxValue(cb) {
         document.getElementById("isDoneNumValue").value = "0";
     
     }
+}
+
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
 }
 
 //function changeToRegForm() {
