@@ -41,14 +41,19 @@ namespace MariusTodoList.Controllers
         {           
             var user = GetCurrentUser();
 
-            if (user == null)           
+            if (user == null)
+            {
+                ViewBag.HellowMessage = "";
                 return RedirectToAction("Login", "Account");
+            }
+                
 
             if (description != null)
             {
                 InserTask(priority, weekDay, description, user);
             }
-            
+
+            ViewBag.HellowMessage = "Welcome, "+ user.UserName + " | ";
 
             List<TasksModel> AllUserTasks = await _context.TasksModel.Where(x => x.UserID == user.UserID).ToListAsync();
             //MONDAY

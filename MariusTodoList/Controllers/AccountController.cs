@@ -42,7 +42,7 @@ namespace MariusTodoList.Controllers
             ApplicationUser user = null;
             var userNameSess = HttpContext.Session.GetString("UserName");
             var userIdSess = HttpContext.Session.GetString("UserID");
-
+            
             if (userNameSess != null && userIdSess != null )                          
                 user = await _userManager.FindByIdAsync(userIdSess);            
             else

@@ -51,7 +51,8 @@ namespace MariusTodoList
             //services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<ApplicationContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddMvc().AddSessionStateTempDataProvider();services.AddSession();
+            services.AddMvc().AddSessionStateTempDataProvider();
+            services.AddSession();
 
             ConfigureDependencies(services);
         }

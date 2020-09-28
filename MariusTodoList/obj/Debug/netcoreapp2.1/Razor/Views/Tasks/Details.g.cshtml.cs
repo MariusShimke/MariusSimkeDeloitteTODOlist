@@ -144,7 +144,7 @@ using MariusTodoList.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(908, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e82dd9cb73054d77ae9cd387f63d999b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6587466714f144a3971564d54e709644", async() => {
                 BeginContext(958, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -179,7 +179,7 @@ using MariusTodoList.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(974, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8595b9acbb340ed8c1c6de1cc7d33af", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1d30a6f8bae4bb28abac4bdb6f7db98", async() => {
                 BeginContext(996, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
