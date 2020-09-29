@@ -29,9 +29,10 @@ $(document).ready(function () {
     var dateStr = d.toString();
     var day = getDayName(dateStr, 'en-US');
 
-   
-    $('#createWeekDay input[type="range"]').val(dayNum).trigger('change'); 
-    //document.getElementById("createWeekDay").value = dayNum.toString();
+    const dayIndex = weekday.indexOf(dayNum);
+
+    document.getElementById("createWeekDay").value = dayIndex;
+   //$('#createWeekDay input[type="range"]').val(dayIndex).trigger('change'); 
 
     const $valueSpan = $('.valueSpan2');
     const $value = $('#createWeekDay');
@@ -65,8 +66,12 @@ $(document).ready(function () {
     });
 
     
-   
-
+    //var dd = new Date();
+    //var nn = dd.getDay()
+    //alert(weekday[dd.getDay()]);
+    if ($('#carousel-vertical').carousel(dayIndex).hasClass('active')) {
+       
+    }
 });
 
 function changeBoxValue(cb) {    

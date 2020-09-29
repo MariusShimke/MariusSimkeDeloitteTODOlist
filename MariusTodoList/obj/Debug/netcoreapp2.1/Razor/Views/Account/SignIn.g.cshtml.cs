@@ -71,7 +71,7 @@ using MariusTodoList.Models;
         ");
             EndContext();
             BeginContext(410, 317, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ed0bf3e017a43e4b83db1cc48c428d7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2214f52c6cdf403482f3c658986fcb6f", async() => {
                 BeginContext(435, 285, true);
                 WriteLiteral(@"
             <input type=""text"" id=""login"" class=""fadeIn second"" name=""login"" placeholder=""login"">
